@@ -12,7 +12,7 @@ def home(vl_produto, qtd_prod, tipo_frete):
     pct_comissao_p = 0.14  # Comissão padrão 14%
     pct_comissao_a = 0.06  # Comissão adicional 6%
     item_v = 3  # Valor por item vendido
-    comissao = 0.5 # Porcentagem de lucro em cima do produto
+    comissao = 0.6 # Porcentagem de lucro em cima do produto
     tx_maior_100_comissao = 100 # Regra: Teto de comissão de R$ 100, exemplo: Comissão deu R$ 200 ele fica travado em R$ 100
     tx_item_6 = gvl_produto / 2 # Regra: Quando o valor é menor que R$ 6,00 o valor da taxa é dividido por 2
     tx_item = qtd_prod * item_v   
@@ -160,10 +160,16 @@ def clique():
     
     if vl_produto_val == '':
         vl_produto_val = 0
+        teste = CTkLabel(janela, text = '⚠️ ERRO! Valor em branco! ⚠️', width = 100, height = 10, bg_color = 'red', fg_color = 'black', text_color = 'red')
+        teste.pack(padx = 10, pady = 10)
+        teste.place(x = 330, y = 70)
     else:
         vl_produto_val = float(vl_produto_val)
     if qtd_prod_val == '':
         qtd_prod_val = 0
+        teste2 = CTkLabel(janela, text = '⚠️ ERRO! Quantidade em branco! ⚠️', width = 100, height = 10, bg_color = 'red', fg_color = 'black')
+        teste2.pack(padx = 10, pady = 10)
+        teste2.place(x = 330, y = 110)
     else:
         qtd_prod_val = int(qtd_prod_val)
 
